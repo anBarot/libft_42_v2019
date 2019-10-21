@@ -6,7 +6,7 @@
 /*   By: abarot <abarot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:22:59 by abarot            #+#    #+#             */
-/*   Updated: 2019/10/16 10:37:25 by abarot           ###   ########.fr       */
+/*   Updated: 2019/10/18 14:45:30 by abarot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	void *dest;
 
-	dest = (void *)malloc(num * size);
+	if (num * size == 0)
+	{
+		num = 1;
+		size = 1;
+	}
+	dest = malloc(num * size);
 	if (dest == 0)
 		return (0);
 	ft_bzero(dest, (size * num));

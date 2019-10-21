@@ -6,7 +6,7 @@
 /*   By: abarot <abarot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:14:05 by abarot            #+#    #+#             */
-/*   Updated: 2019/10/11 19:00:17 by abarot           ###   ########.fr       */
+/*   Updated: 2019/10/18 16:30:22 by abarot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*p;
 	unsigned char	*q;
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	while (i < n)
 	{
-		if (q[i] < p[i] || q[i] > p[i])
+		if (q[i] != p[i])
 			return (p[i] - q[i]);
 		i++;
 	}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarot <abarot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 13:00:26 by abarot            #+#    #+#             */
-/*   Updated: 2019/10/15 14:04:32 by abarot           ###   ########.fr       */
+/*   Updated: 2019/10/16 12:46:19 by abarot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(void *content)
 
 	if (!(new_lst = malloc(sizeof(t_list))))
 		return (0);
-	new_lst -> content = content;
-	new_lst -> next = 0;
+	new_lst->content = content;
+	new_lst->next = 0;
 	return (new_lst);
 }

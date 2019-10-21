@@ -6,7 +6,7 @@
 /*   By: abarot <abarot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:34:00 by abarot            #+#    #+#             */
-/*   Updated: 2019/10/16 11:01:41 by abarot           ###   ########.fr       */
+/*   Updated: 2019/10/18 14:44:25 by abarot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char			*b;
+	size_t		i;
+	char		*b;
 
 	b = (char *)s;
 	i = 0;

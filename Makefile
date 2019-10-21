@@ -6,7 +6,7 @@
 #    By: abarot <abarot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/15 12:18:43 by abarot            #+#    #+#              #
-#    Updated: 2019/10/16 11:01:33 by abarot           ###   ########.fr        #
+#    Updated: 2019/10/16 14:03:28 by abarot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,9 @@ SRCS	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 			ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c  \
 			ft_putendl_fd.c ft_putnbr_fd.c 
 
-SRCS_BONUS	=	$(SRCS)	\
-				ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-				ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SRCS_BONUS	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 				
 OBJS	=	$(SRCS:.c=.o)
 
@@ -35,21 +34,22 @@ CFLAGS	=	-Werror -Wall -Wextra
 
 RM	=	rm -f
 
+%.o : %.c
+		gcc $(FLAGS) -c $< -o $@
+
 all	:
 		@make $(NAME)
 
-$(NAME)	:
-		gcc $(CFLAGS) -c $(SRCS) 
+$(NAME)	: $(OBJS) 
 		ar -rc $(NAME) $(OBJS) 
 		ranlib $(NAME)
 
-bonus	: $(OBJS_BONUS) 
-		gcc $(CFLAGS) -c $(SRCS_BONUS) 
-		ar -rc $(NAME) $(OBJS_BONUS) 
+bonus	: $(OBJS_BONUS) $(OBJS) 
+		ar -rc $(NAME) $(OBJS_BONUS) $(OBJS)
 		ranlib $(NAME)
 
 clean	:
-		$(RM) $(OBJS_BONUS) 
+		$(RM) $(OBJS_BONUS) $(OBJS) 
 
 fclean	:	clean
 		$(RM) $(NAME)

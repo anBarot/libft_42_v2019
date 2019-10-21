@@ -6,13 +6,13 @@
 /*   By: abarot <abarot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:55:06 by abarot            #+#    #+#             */
-/*   Updated: 2019/10/10 13:36:45 by abarot           ###   ########.fr       */
+/*   Updated: 2019/10/17 12:16:06 by abarot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
 	size_t i;
 
